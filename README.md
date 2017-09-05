@@ -1,8 +1,6 @@
 # SparkMini
 
-### [Spark][1] - 一个基于 Java 8的小型Web框架
-### [Spark][1] - A tiny web framework for Java 8
-
+### [Spark][1] - 一个基于 Java 8的小型Web框架 /A tiny web framework for Java 8
 
 **注意 : 这里的Spark不是用于大数据处理的Spark, 而是一个简单的Web框架, [这里是官方Github地址][1].**  
 **Notice : This Spark is not used for large data processing Spark, but a simple Web framework, [here][1] is the official Github page.**  
@@ -14,12 +12,9 @@
 > Java8  
 > Maven3.3  
 
-整个项目的使用方法非常简单, 只需要在控制器上继承```Router```类即可.  
-The use of the entire project is very simple, only need to inherit the ```Router``` class can be on the controller.
-
-示例 :  
-Example :  
+示例/Example :  
 ```
+--------------------------------------------------
 启动类/Start
 public static void main(String[] args) {
 	// 扫描包, 寻找Router绑定的对象.
@@ -41,6 +36,10 @@ public static void main(String[] args) {
 }
 --------------------------------------------------
 控制器/Controller
+/**
+ * 整个项目的使用方法非常简单, 只需要在控制器上实现Router类即可.
+ * The use of the entire project is very simple, only need to inherit the ```Router``` class can be on the controller.
+ */
 public class IndexRouter implements Router {
    	@Override
    	public void route() {
@@ -56,6 +55,7 @@ public class IndexRouter implements Router {
    		return "Hello, this is api.";
    	}
 }
+--------------------------------------------------
 ```
 
 [1]: https://github.com/perwendel/spark
