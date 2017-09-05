@@ -45,7 +45,7 @@ public class IPFilter implements Filter {
 	 * 
 	 * <pre>
 	 * {
-	 *    "count" : { "extra" : 1, "range" : 2 },
+	 *    "count" : { "extra" : 2, "range" : 2 },
 	 *    "extra" : [ "127.0.0.1", "8.8.8.8" ],
 	 *    "range" : [ { "start" : "10.0.0.0", "end" : "10.0.0.255" }, { "start" : "192.168.1.1", "end" : "192.168.1.255" } ]
 	 * }
