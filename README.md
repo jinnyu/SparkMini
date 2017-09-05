@@ -59,12 +59,5 @@ Package :
 cd ${project}
 mvn clean package
 ```
-启动 :  
-Run :  
-```
-cd ${project}/target/
-java -jar spark-mini.jar
-```
 
 [1]: https://github.com/perwendel/spark
-[2]: http://sparkjava.com/documentation
