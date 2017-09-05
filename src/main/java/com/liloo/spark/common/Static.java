@@ -31,6 +31,8 @@ public class Static {
 
 	public static final Log		log					= LogFactory.get();
 
+	public static final String	IP_PUBLIC			= "0.0.0.0";
+
 	public static final String	CHARSET_UTF8		= "UTF-8";
 
 	public static final String	CONTENT_TYPE_HTML	= "text/html; charset=utf-8";

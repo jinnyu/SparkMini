@@ -16,6 +16,7 @@ The use of the entire project is very simple, only need to inherit the ```Router
 示例 :  
 Example :  
 ```
+控制器/Controller
 public class IndexController implements Router {
    	@Override
    	public void route() {
@@ -30,6 +31,25 @@ public class IndexController implements Router {
    	private static String api(Request requset, Response response) {
    		return "Hello, this is api.";
    	}
+}
+启动类/Start
+public static void main(String[] args) {
+	// 扫描包, 寻找Router绑定的对象.
+	List<Class<? extends Router>> classes = RouterHandler.getRouters(true);
+	// CollectionUtil是HuTool提供的判断集合是否为空的方法, 可自行替换.
+	if (CollectionUtil.isNotEmpty(classes)) {
+		classes.stream().forEach(cls -> {
+			try {
+				// 反射执行
+				Router server = cls.newInstance();
+				server.getClass().getMethod("route").invoke(server);
+			} catch (InstantiationException | NoSuchMethodException | SecurityException | IllegalArgumentException| IllegalAccessException | InvocationTargetException e) {
+				e.printStackTrace();
+			}
+		});
+	} else {
+		Static.log.warn("No router found.");
+	}
 }
 ```
 打包 :  

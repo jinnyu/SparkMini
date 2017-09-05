@@ -60,6 +60,11 @@
 			<artifactId>hutool-log</artifactId>
 			<version>${hutool.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.xiaoleilu</groupId>
+			<artifactId>hutool-json</artifactId>
+			<version>${hutool.version}</version>
+		</dependency>
 		<!-- 基础 - 日志组件 -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -99,6 +104,7 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+			<!-- 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -119,6 +125,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			 -->
 		</plugins>
 	</build>
 
