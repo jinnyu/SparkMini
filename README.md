@@ -16,22 +16,6 @@ The use of the entire project is very simple, only need to inherit the ```Router
 示例 :  
 Example :  
 ```
-控制器/Controller
-public class IndexRouter implements Router {
-   	@Override
-   	public void route() {
-		// 这里的Spark是Spark框架提供的, 相关文档请参考Sprak文档. http://sparkjava.com/documentation
-		Spark.get("/", (request, response) -> {
-   			return "Hello, this is index!";
-   		});
-   		Spark.path("/api", () -> {
-   			Spark.get("/account", IndexController::api);
-   		});
-   	}
-   	private static String api(Request requset, Response response) {
-   		return "Hello, this is api.";
-   	}
-}
 启动类/Start
 public static void main(String[] args) {
 	// 扫描包, 寻找Router绑定的对象.
@@ -50,6 +34,23 @@ public static void main(String[] args) {
 	} else {
 		Static.log.warn("No router found.");
 	}
+}
+--------------------------------------------------
+控制器/Controller
+public class IndexRouter implements Router {
+   	@Override
+   	public void route() {
+		// 这里的Spark是Spark框架提供的, 相关文档请参考Sprak文档. http://sparkjava.com/documentation
+		Spark.get("/", (request, response) -> {
+   			return "Hello, this is index!";
+   		});
+   		Spark.path("/api", () -> {
+   			Spark.get("/account", IndexController::api);
+   		});
+   	}
+   	private static String api(Request requset, Response response) {
+   		return "Hello, this is api.";
+   	}
 }
 ```
 打包 :  
