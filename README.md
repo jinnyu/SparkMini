@@ -19,8 +19,8 @@ The use of the entire project is very simple, only need to inherit the ```Router
     
     	@Override
     	public void route() {
-    	    // 这里的Spark是Spark框架提供的, 相关文档请参考Sprak文档. http://sparkjava.com/documentation
-    		Spark.get("/", (request, response) -> {
+			// 这里的Spark是Spark框架提供的, 相关文档请参考Sprak文档. http://sparkjava.com/documentation
+			Spark.get("/", (request, response) -> {
     			return "Hello, this is index!";
     		});
     		Spark.path("/api", () -> {
