@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration scan="true" scanPeriod="30 seconds" debug="false">
+	
+	<!-- 默认输出到控制台, 如需要输出到其他地方请自行添加, 此处不做处理. -->
+	<appender name="R" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 格式化输出 : %d表示日期, %-5level : 级别从左显示5个字符宽度, %msg : 日志消息, %n是换行符 -->
+		<encoder>
+			<!-- 15-09-21 15:23:40 [INFO ] (Test.java:60) - This is a test Logger Message. -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] \(%F:%L\) - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 日志输出级别 -->
+	<root level="INFO">
+		<appender-ref ref="R" />
+	</root>
+	
+	<!-- 单独指定日记级别 -->
+	<!-- <logger name="xxx.yyy.zzz" level="OFF" /> -->
+
+</configuration>
