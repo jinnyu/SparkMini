@@ -39,7 +39,6 @@
 		<jdk.version>1.8</jdk.version>
 		<spark.version>2.6.0</spark.version>
 		<hutool.version>3.1.0</hutool.version>
-		<slf4j.version>1.7.25</slf4j.version>
 		<logback.version>1.2.3</logback.version>
 	</properties>
 
