@@ -27,7 +27,7 @@ public class IndexController implements Router {
    		});
    	}
    	private static String api(Request requset, Response response) {
-   		return "This is api.";
+   		return "Hello, this is api.";
    	}
 }
 ```
