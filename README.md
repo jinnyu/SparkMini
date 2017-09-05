@@ -38,7 +38,7 @@ public static void main(String[] args) {
 控制器/Controller
 /**
  * 整个项目的使用方法非常简单, 只需要在控制器上实现Router类即可.
- * The use of the entire project is very simple, only need to inherit the ```Router``` class can be on the controller.
+ * The use of the entire project is very simple, only need to inherit the Router class can be on the controller.
  */
 public class IndexRouter implements Router {
    	@Override
