@@ -15,21 +15,21 @@ This project is a simple wrapper, in order to provide a simple way to start, rat
 
 示例 :
 ```
-    public class IndexController implements Router {
-    	@Override
-    	public void route() {
-			// 这里的Spark是Spark框架提供的, 相关文档请参考Sprak文档. http://sparkjava.com/documentation
-			Spark.get("/", (request, response) -> {
-    			return "Hello, this is index!";
-    		});
-    		Spark.path("/api", () -> {
-    			Spark.get("/account", IndexController::api);
-    		});
-    	}
-    	private static String api(Request requset, Response response) {
-    		return "This is api.";
-    	}
-    }
+public class IndexController implements Router {
+   	@Override
+   	public void route() {
+		// 这里的Spark是Spark框架提供的, 相关文档请参考Sprak文档. http://sparkjava.com/documentation
+		Spark.get("/", (request, response) -> {
+   			return "Hello, this is index!";
+   		});
+   		Spark.path("/api", () -> {
+   			Spark.get("/account", IndexController::api);
+   		});
+   	}
+   	private static String api(Request requset, Response response) {
+   		return "This is api.";
+   	}
+}
 ```
 启动 :
 ```
