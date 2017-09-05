@@ -38,9 +38,11 @@ public class RouterHandler {
 	 */
 	public static List<Class<? extends Router>> getRouters(boolean scanJar) {
 		List<Class<? extends Router>> classes = ClassSearcher.of(Router.class).includeAllJarsInLib(scanJar).search();
-		classes.stream().forEach(cls -> {
-			Static.log.info("Bind Route Class -> {}", cls.getName());
-		});
+		if (Static.log.isDebugEnabled()) {
+			classes.stream().forEach(cls -> {
+				Static.log.debug("Bind Route Class -> {}", cls.getName());
+			});
+		}
 		return classes;
 	}
 
