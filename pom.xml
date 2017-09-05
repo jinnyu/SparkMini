@@ -21,15 +21,15 @@
 
 	<scm>
 		<tag>master</tag>
-		<url>git@github.com:cloudnil/marathon-client.git</url>
-		<connection>scm:git:git@github.com:cloudnil/marathon-client.git</connection>
-		<developerConnection>scm:git:git@github.com:cloudnil/marathon-client.git</developerConnection>
+		<url>https://github.com/liloo-java/SparkMini.git</url>
+		<connection>scm:https://github.com/liloo-java/SparkMini.git</connection>
+		<developerConnection>scm:git:git@github.com:liloo-java/SparkMini.git</developerConnection>
 	</scm>
 	<developers>
 		<developer>
-			<name>cloudnil</name>
-			<email>cloudnil@126.com</email>
-			<organization>CloudNil</organization>
+			<name>Liloo</name>
+			<email>liloo@liloo.top</email>
+			<organization>Liloo</organization>
 		</developer>
 	</developers>
 
