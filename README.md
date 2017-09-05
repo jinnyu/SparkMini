@@ -17,7 +17,7 @@ The use of the entire project is very simple, only need to inherit the ```Router
 Example :  
 ```
 控制器/Controller
-public class IndexController implements Router {
+public class IndexRouter implements Router {
    	@Override
    	public void route() {
 		// 这里的Spark是Spark框架提供的, 相关文档请参考Sprak文档. http://sparkjava.com/documentation
