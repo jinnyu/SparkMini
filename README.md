@@ -10,7 +10,7 @@ Notice : This Spark is not used for large data processing Spark, but a simple We
 这个项目是一个简单的封装, 为的是提供一种简单的启动方式, 而不是利用"繁重"的Web容器来提供Rest接口.  
 This project is a simple wrapper, in order to provide a simple way to start, rather than the use of "heavy" Web container to provide Rest interface.  
 
- - 整个项目的使用方法非常简单, 只需要在控制器上继承```Router```类即可.  
+整个项目的使用方法非常简单, 只需要在控制器上继承```Router```类即可.  
    The use of the entire project is very simple, only need to inherit the ```Router``` class can be on the controller.
 
     示例 :
