@@ -13,8 +13,8 @@ This project is a simple wrapper, in order to provide a simple way to start, rat
 整个项目的使用方法非常简单, 只需要在控制器上继承```Router```类即可.  
 The use of the entire project is very simple, only need to inherit the ```Router``` class can be on the controller.
 
-示例 :
-Example: 
+示例 :  
+Example :  
 ```
 public class IndexController implements Router {
    	@Override
@@ -32,14 +32,14 @@ public class IndexController implements Router {
    	}
 }
 ```
-打包 :
-Package : 
+打包 :  
+Package :  
 ```
 cd ${project}
 mvn clean package
 ```
-启动 :
-Run :
+启动 :  
+Run :  
 ```
 cd ${project}/target/
 java -jar spark-mini.jar
