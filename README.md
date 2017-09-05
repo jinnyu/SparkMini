@@ -53,11 +53,5 @@ public class IndexRouter implements Router {
    	}
 }
 ```
-打包 :  
-Package :  
-```
-cd ${project}
-mvn clean package
-```
 
 [1]: https://github.com/perwendel/spark
