@@ -13,10 +13,9 @@ This project is a simple wrapper, in order to provide a simple way to start, rat
 整个项目的使用方法非常简单, 只需要在控制器上继承```Router```类即可.  
    The use of the entire project is very simple, only need to inherit the ```Router``` class can be on the controller.
 
-    示例 :
-    ```
+示例 :
+```
     public class IndexController implements Router {
-    
     	@Override
     	public void route() {
 			// 这里的Spark是Spark框架提供的, 相关文档请参考Sprak文档. http://sparkjava.com/documentation
@@ -27,17 +26,14 @@ This project is a simple wrapper, in order to provide a simple way to start, rat
     			Spark.get("/account", IndexController::api);
     		});
     	}
-    
     	private static String api(Request requset, Response response) {
     		return "This is api.";
     	}
-    	
     }
-    ```
-    启动 :
-    ```
-    
-    ```
+```
+启动 :
+```
+```
 
-  [1]: https://github.com/perwendel/spark
-  [2]: http://sparkjava.com/documentation
+[1]: https://github.com/perwendel/spark
+[2]: http://sparkjava.com/documentation
