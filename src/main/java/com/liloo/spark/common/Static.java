@@ -25,7 +25,7 @@ import com.xiaoleilu.hutool.log.LogFactory;
 /**
  * @Author Written by Kim.
  * @Email liloo@liloo.top
- * @Date 2017-09-5
+ * @Date 2017-09-05
  */
 public class Static {
 
@@ -35,17 +35,17 @@ public class Static {
 
 	public static final String	CONTENT_TYPE_HTML	= "text/html; charset=utf-8";
 	public static final String	CONTENT_TYPE_XML	= "application/xml";
-	
+
 	public static final String	CONTENT_TYPE_CSS	= "text/css";
 	public static final String	CONTENT_TYPE_JS		= "application/x-javascript";
 	public static final String	CONTENT_TYPE_JSON	= "application/json; charset=UTF-8";
-	
+
 	public static final String	CONTENT_TYPE_JPG	= "image/jpeg";
 	public static final String	CONTENT_TYPE_PNG	= "image/png";
 	public static final String	CONTENT_TYPE_GIF	= "image/gif";
 	public static final String	CONTENT_TYPE_WEBP	= "image/webp";
 	public static final String	CONTENT_TYPE_SVG	= "image/svg+xml; charset=UTF-8";
-	
+
 	public static final String	CONTENT_TYPE_STREAM	= "application/octet-stream";
 
 }
