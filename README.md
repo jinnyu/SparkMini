@@ -11,9 +11,10 @@ Notice : This Spark is not used for large data processing Spark, but a simple We
 This project is a simple wrapper, in order to provide a simple way to start, rather than the use of "heavy" Web container to provide Rest interface.  
 
 整个项目的使用方法非常简单, 只需要在控制器上继承```Router```类即可.  
-   The use of the entire project is very simple, only need to inherit the ```Router``` class can be on the controller.
+The use of the entire project is very simple, only need to inherit the ```Router``` class can be on the controller.
 
 示例 :
+Example: 
 ```
 public class IndexController implements Router {
    	@Override
@@ -31,8 +32,17 @@ public class IndexController implements Router {
    	}
 }
 ```
-启动 :
+打包 :
+Package : 
 ```
+cd ${project}
+mvn clean package
+```
+启动 :
+Run :
+```
+cd ${project}/target/
+java -jar spark-mini.jar
 ```
 
 [1]: https://github.com/perwendel/spark
