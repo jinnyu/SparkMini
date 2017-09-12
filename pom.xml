@@ -6,6 +6,10 @@
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
+	<name>SparkMini</name>
+	<description>Spark - 一个基于 Java 8的小型Web框架 /A tiny web framework for Java 8</description>
+	<url>http://www.liloo.cc</url>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -25,6 +29,7 @@
 		<connection>scm:https://github.com/liloo-java/SparkMini.git</connection>
 		<developerConnection>scm:git:git@github.com:liloo-java/SparkMini.git</developerConnection>
 	</scm>
+	
 	<developers>
 		<developer>
 			<name>Liloo</name>
