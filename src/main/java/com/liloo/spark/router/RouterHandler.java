@@ -24,9 +24,9 @@ import com.liloo.spark.clazz.ClassSearcher;
 import com.liloo.spark.common.Static;
 
 /**
- * @Author Written by Kim.
- * @Email liloo@liloo.top
- * @Date 2017-08-20
+ * <p>Author Written by Kim.</p>
+ * <p>Email liloo@liloo.top</p>
+ * <p>Date 2017-08-20</p>
  */
 public class RouterHandler {
 
@@ -34,7 +34,7 @@ public class RouterHandler {
 	 * 扫描所有子类
 	 * 
 	 * @param scanJar 是否扫描jar包中的类
-	 * @return
+	 * @return Router子类集合
 	 */
 	public static List<Class<? extends Router>> getRouters(boolean scanJar) {
 		List<Class<? extends Router>> classes = ClassSearcher.of(Router.class).includeAllJarsInLib(scanJar).search();

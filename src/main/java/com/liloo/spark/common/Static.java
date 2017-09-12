@@ -16,16 +16,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 --------------------------------------------------
  */
-
 package com.liloo.spark.common;
 
 import com.xiaoleilu.hutool.log.Log;
 import com.xiaoleilu.hutool.log.LogFactory;
 
 /**
- * @Author Written by Kim.
- * @Email liloo@liloo.top
- * @Date 2017-09-05
+ * <p>Author Written by Kim.</p>
+ * <p>Email liloo@liloo.top</p>
+ * <p>Date 2017-08-19</p>
  */
 public class Static {
 

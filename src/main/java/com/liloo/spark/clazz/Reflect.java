@@ -32,10 +32,11 @@ import java.util.Map;
 /**
  * A wrapper for an {@link Object} or {@link Class} upon which reflective calls can be made.
  * <p>
- * An example of using <code>Reflect</code> is <code><pre>
+ * An example of using <code>Reflect</code> is
+ * <pre>
+ * <code>
  * // Static import all reflection methods to decrease verbosity
  * import static org.joor.Reflect.*;
- * <pre>
  * Wrap an Object / Class / class name with the on() method:
  * 	on("java.lang.String")
  * Invoke constructors using the create() method:
@@ -43,7 +44,8 @@ import java.util.Map;
  * Invoke methods using the call() method:
  * 	.call("toString")
  * Retrieve the wrapped object
- * <pre>
+ * </code>
+ * </pre>
  * @author Lukas Eder
  */
 public class Reflect {
@@ -87,7 +89,7 @@ public class Reflect {
 
     /**
      * Conveniently render an {@link AccessibleObject} accessible
-     * 
+     * @param <T> Class
      * @param accessible The object to render accessible
      * @return The argument object rendered accessible
      */
@@ -133,12 +135,11 @@ public class Reflect {
     // ---------------------------------------------------------------------
 
     /**
-     * Get the wrapped object
-     * 
-     * @param <T> A convenience generic parameter for automatic unsafe casting
+     * @param <T> Class
+     * @return the wrapped object 
      */
     @SuppressWarnings("unchecked")
-    public <T> T get() {
+	public <T> T get() {
         return (T) object;
     }
 
@@ -180,6 +181,7 @@ public class Reflect {
      * <p>
      * If you want to "navigate" to a wrapped version of the field, use {@link #field(String)} instead.
      * 
+     * @param <T> Class
      * @param name The field name
      * @return The field value
      * @throws ReflectException If any reflection exception occurred.
@@ -235,10 +237,11 @@ public class Reflect {
      * If the wrapped object is a {@link Class}, then this will return static fields. If the wrapped object is any other
      * {@link Object}, then this will return instance fields.
      * <p>
-     * These two calls are equivalent <code><pre>
+     * These two calls are equivalent 
+     * <code>
      * on(object).field("myField");
      * on(object).fields().get("myField");
-     * </pre></code>
+     * </code>
      * 
      * @return A map containing field names and wrapped values.
      */
@@ -276,15 +279,15 @@ public class Reflect {
      * <p>
      * Just like {@link Method#invoke(Object, Object...)}, this will try to wrap primitive types or unwrap primitive
      * type wrappers if applicable. If several methods are applicable, by that rule, the first one encountered is
-     * called. i.e. when calling <code><pre>
+     * called. i.e. when calling <pre><code>
      * on(...).call("method", 1, 1);
-     * </pre></code> The first of the following methods will be called: <code><pre>
+     * </code></pre> The first of the following methods will be called: <pre><code>
      * public void method(int param1, Integer param2);
      * public void method(Integer param1, int param2);
      * public void method(Number param1, Number param2);
      * public void method(Number param1, Object param2);
      * public void method(int param1, Object param2);
-     * </pre></code>
+     * </code></pre>
      * <p>
      * The best matching method is searched for with the following strategy:
      * <ol>
@@ -389,15 +392,21 @@ public class Reflect {
      * <p>
      * Just like {@link Constructor#newInstance(Object...)}, this will try to wrap primitive types or unwrap primitive
      * type wrappers if applicable. If several constructors are applicable, by that rule, the first one encountered is
-     * called. i.e. when calling <code><pre>
+     * called. i.e. when calling 
+     * <pre>
+     * <code>
      * on(C.class).create(1, 1);
-     * </pre></code> The first of the following constructors will be applied: <code><pre>
+     * </code>
+     * </pre> The first of the following constructors will be applied: 
+     * <pre>
+     * <code>
      * public C(int param1, Integer param2);
      * public C(Integer param1, int param2);
      * public C(Number param1, Number param2);
      * public C(Number param1, Object param2);
      * public C(int param1, Object param2);
-     * </pre></code>
+     * </code>
+     * </pre>
      * 
      * @param args The constructor arguments
      * @return The wrapped new object, to be used for further reflection.
@@ -422,13 +431,12 @@ public class Reflect {
         }
     }
 
+    @SuppressWarnings("unchecked")
     /**
      * Create a proxy for the wrapped object allowing to typesafely invoke methods on it using a custom interface
-     * 
      * @param proxyType The interface type that is implemented by the proxy
      * @return A proxy for the wrapped object
      */
-    @SuppressWarnings("unchecked")
 	public <P> P as(Class<P> proxyType) {
 		final boolean isMap = (object instanceof Map);
 		final InvocationHandler handler = (proxy, method, args) -> {
@@ -576,17 +584,19 @@ public class Reflect {
     }
 
     /**
-     * Get the type of the wrapped object.
      * @see Object#getClass()
+     * @return Get the type of the wrapped object.
      */
 	public Class<?> type() {
 		if (isClass) return (Class<?>) object;
 		else return object.getClass();
 	}
 
-    /**
-     * Get a wrapper type for a primitive type, or the argument type itself, if it is not a primitive type.
-     */
+	/**
+	 * Get a wrapper type for a primitive type, or the argument type itself, if it is not a primitive type.
+	 * @param type Class type
+	 * @return The wapper Class
+	 */
 	public static Class<?> wrapper(Class<?> type) {
 		if (type == null) {
 			return null;

@@ -31,9 +31,9 @@ import spark.Request;
 import spark.Response;
 
 /**
- * @Author Written by Kim.
- * @Email liloo@liloo.top
- * @Date 2017-08-19
+ * <p>Author Written by Kim.</p>
+ * <p>Email liloo@liloo.top</p>
+ * <p>Date 2017-08-19</p>
  */
 public class IPFilter implements Filter {
 
@@ -42,7 +42,6 @@ public class IPFilter implements Filter {
 
 	/**
 	 * JSON结构如下, 拦截器会根据定义的规则来进行拦截.
-	 * 
 	 * <pre>
 	 * {
 	 *    "count" : { "extra" : 2, "range" : 2 },
@@ -50,6 +49,7 @@ public class IPFilter implements Filter {
 	 *    "range" : [ { "start" : "10.0.0.0", "end" : "10.0.0.255" }, { "start" : "192.168.1.1", "end" : "192.168.1.255" } ]
 	 * }
 	 * </pre>
+	 *  @param obj IP数据
 	 */
 	public IPFilter(JSONObject obj) {
 		if (CollectionUtil.isNotEmpty(obj)) this.obj = obj;

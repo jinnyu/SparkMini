@@ -166,10 +166,6 @@ public class ClassSearcher {
 		return this;
 	}
 
-	/**
-	 * @param web 是否包含Web目录
-	 * @return
-	 */
 	public <T> List<Class<? extends T>> search() {
 		return search(false);
 	}
@@ -186,7 +182,6 @@ public class ClassSearcher {
 	 * 
 	 * @param baseDirName jar路径
 	 * @param includeJars
-	 * @param jarFileURL  jar文件地址
 	 * @return
 	 */
 	private List<String> findjarFiles(String baseDirName, final List<String> includeJars) {
