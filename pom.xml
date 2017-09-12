@@ -15,7 +15,6 @@
 
 		这个项目是一个简单的封装, 为的是提供一种简单的启动方式, 而不是利用"繁重"的Web容器来提供Rest接口.
 		This project is a simple wrapper, in order to provide a simple way to start, rather than the use of "heavy" Web container to provide Rest interface.
-		
 		环境要求/Environment :
 		Java8
 		Maven3.3
