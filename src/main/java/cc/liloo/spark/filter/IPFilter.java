@@ -138,7 +138,7 @@ public class IPFilter implements Filter {
 					for (int i = 3; i >= 0; i--) {
 						try {
 							Long.parseLong(str[i]);
-						} catch (Exception e) {
+						} catch (NumberFormatException e) {
 							return false;
 						}
 					}
