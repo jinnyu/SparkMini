@@ -16,16 +16,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 --------------------------------------------------
  */
-package com.liloo.spark.filter;
+package cc.liloo.spark.filter;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.liloo.spark.common.Static;
 import com.xiaoleilu.hutool.json.JSONArray;
 import com.xiaoleilu.hutool.json.JSONObject;
 import com.xiaoleilu.hutool.util.CollectionUtil;
 import com.xiaoleilu.hutool.util.StrUtil;
 
+import cc.liloo.spark.common.Static;
 import spark.Filter;
 import spark.Request;
 import spark.Response;
@@ -49,9 +49,13 @@ public class IPFilter implements Filter {
 	 *    "range" : [ { "start" : "10.0.0.0", "end" : "10.0.0.255" }, { "start" : "192.168.1.1", "end" : "192.168.1.255" } ]
 	 * }
 	 * </pre>
-	 *  @param obj IP数据
+	 * 
+	 * @param statusCode 返回状态码
+	 * @param obj IP数据<br>
+	 * 计数字段不能为空, 始终为 { "extra" : ?, "range" : ? }, ? 为零或者正整数.<br>
+	 * 若例外(extra)IP为空, 则extra字段传空的JSONArray. 范围(range)IP同理传空的JSONObject.
 	 */
-	public IPFilter(JSONObject obj) {
+	public IPFilter(int statusCode, JSONObject obj) {
 		if (CollectionUtil.isNotEmpty(obj)) this.obj = obj;
 		else this.obj = new JSONObject();
 	}

@@ -16,35 +16,34 @@ See the License for the specific language governing permissions and
 limitations under the License.
 --------------------------------------------------
  */
-package com.liloo.spark.filter;
+package cc.liloo.spark.router;
 
-import com.liloo.spark.common.Static;
-import com.xiaoleilu.hutool.util.StrUtil;
+import java.util.List;
 
-import spark.Filter;
-import spark.Request;
-import spark.Response;
+import cc.liloo.spark.clazz.ClassSearcher;
+import cc.liloo.spark.common.Static;
 
 /**
  * <p>Author Written by Kim.</p>
  * <p>Email liloo@liloo.top</p>
- * <p>Date 2017-08-19</p>
+ * <p>Date 2017-08-20</p>
  */
-public class ContentTypeFilter implements Filter {
-
-	private String type;
+public class RouterHandler {
 
 	/**
-	 * @param type Http类型
+	 * 扫描所有子类
+	 * 
+	 * @param scanJar 是否扫描jar包中的类
+	 * @return Router子类集合
 	 */
-	public ContentTypeFilter(String type) {
-		if (StrUtil.isNotBlank(type)) this.type = type;
-	}
-
-	@Override
-	public void handle(Request request, Response response) throws Exception {
-		if (Static.log.isDebugEnabled()) Static.log.debug("Set application type to {}.", type == null ? Static.CONTENT_TYPE_JSON : type);
-		response.raw().setContentType(type);
+	public static List<Class<? extends Router>> getRouters(boolean scanJar) {
+		List<Class<? extends Router>> classes = ClassSearcher.of(Router.class).includeAllJarsInLib(scanJar).search();
+		if (Static.log.isDebugEnabled()) {
+			classes.stream().forEach(cls -> {
+				Static.log.debug("Bind Route Class -> {}", cls.getName());
+			});
+		}
+		return classes;
 	}
 
 }

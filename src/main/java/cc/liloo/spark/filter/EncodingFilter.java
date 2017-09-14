@@ -16,34 +16,37 @@ See the License for the specific language governing permissions and
 limitations under the License.
 --------------------------------------------------
  */
-package com.liloo.spark.router;
+package cc.liloo.spark.filter;
 
-import java.util.List;
+import com.xiaoleilu.hutool.util.StrUtil;
 
-import com.liloo.spark.clazz.ClassSearcher;
-import com.liloo.spark.common.Static;
+import cc.liloo.spark.common.Static;
+import spark.Filter;
+import spark.Request;
+import spark.Response;
 
 /**
  * <p>Author Written by Kim.</p>
  * <p>Email liloo@liloo.top</p>
- * <p>Date 2017-08-20</p>
+ * <p>Date 2017-08-19</p>
  */
-public class RouterHandler {
+public class EncodingFilter implements Filter {
 
-	/**
-	 * 扫描所有子类
-	 * 
-	 * @param scanJar 是否扫描jar包中的类
-	 * @return Router子类集合
-	 */
-	public static List<Class<? extends Router>> getRouters(boolean scanJar) {
-		List<Class<? extends Router>> classes = ClassSearcher.of(Router.class).includeAllJarsInLib(scanJar).search();
-		if (Static.log.isDebugEnabled()) {
-			classes.stream().forEach(cls -> {
-				Static.log.debug("Bind Route Class -> {}", cls.getName());
-			});
-		}
-		return classes;
+	private String encode;
+
+	public EncodingFilter() {
+		this.encode = Static.CHARSET_UTF8;
+	}
+
+	public EncodingFilter(String encode) {
+		if (StrUtil.isNotBlank(encode)) this.encode = encode;
+		else throw new NullPointerException("Encode can not be null!");
+	}
+
+	@Override
+	public void handle(Request request, Response response) throws Exception {
+		if (Static.log.isDebugEnabled()) Static.log.debug("Set charset to {}.", encode);
+		request.raw().setCharacterEncoding(encode);
 	}
 
 }

@@ -16,10 +16,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 --------------------------------------------------
  */
-package com.liloo.spark.filter;
+package cc.liloo.spark.filter;
 
-import com.liloo.spark.common.Static;
+import com.xiaoleilu.hutool.util.StrUtil;
 
+import cc.liloo.spark.common.Static;
 import spark.Filter;
 import spark.Request;
 import spark.Response;
@@ -28,13 +29,28 @@ import spark.Response;
  * <p>Author Written by Kim.</p>
  * <p>Email liloo@liloo.top</p>
  * <p>Date 2017-08-19</p>
+ * Default content type is 'application/json; charset=UTF-8'
  */
-public class EncodingFilter implements Filter {
+public class ContentTypeFilter implements Filter {
+
+	private String type;
+
+	public ContentTypeFilter() {
+		this.type = Static.CONTENT_TYPE_JSON;
+	}
+	
+	/**
+	 * @param type Http类型
+	 */
+	public ContentTypeFilter(String type) {
+		if (StrUtil.isNotBlank(type)) this.type = type;
+		else throw new NullPointerException("Content type can not be null!");
+	}
 
 	@Override
 	public void handle(Request request, Response response) throws Exception {
-		if (Static.log.isDebugEnabled()) Static.log.debug("Set charset to UTF-8.");
-		request.raw().setCharacterEncoding("UTF-8");
+		if (Static.log.isDebugEnabled()) Static.log.debug("Set application type to {}.", type);
+		response.raw().setContentType(type);
 	}
 
 }

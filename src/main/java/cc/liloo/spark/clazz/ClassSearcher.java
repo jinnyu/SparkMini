@@ -16,7 +16,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 --------------------------------------------------
  */
-package com.liloo.spark.clazz;
+package cc.liloo.spark.clazz;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-import com.liloo.spark.common.Static;
+import cc.liloo.spark.common.Static;
 
 public class ClassSearcher {
 
