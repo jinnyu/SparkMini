@@ -182,7 +182,7 @@ public class ClassSearcher {
 	 * 
 	 * @param baseDirName jar路径
 	 * @param includeJars
-	 * @return
+	 * @return 搜寻到的Class
 	 */
 	private List<String> findjarFiles(String baseDirName, final List<String> includeJars) {
 		List<String> classFiles = new ArrayList<String>();

@@ -28,25 +28,33 @@ import com.xiaoleilu.hutool.log.LogFactory;
  */
 public class Static {
 
-	public static final Log		log					= LogFactory.get();
+	public static final Log		log						= LogFactory.get();
 
-	public static final String	IP_PUBLIC			= "0.0.0.0";
+	public static final String	IP_LOCALHOST			= "localhost";
+	
+	public static final String	IPV4_LOCALHOST			= "127.0.0.1";
+	public static final String	IPV4_PUBLIC				= "0.0.0.0";
 
-	public static final String	CHARSET_UTF8		= "UTF-8";
+	public static final String	IPV6_LOCALHOST_SHORT	= "::1";
+	public static final String	IPV6_LOCALHOST_LONG		= "0:0:0:0:0:0:0:1";
+	public static final String	IPV6_PUBLIC_SHORT		= "::";
+	public static final String	IPV6_PUBLIC_LONG		= "0:0:0:0:0:0:0:0";
 
-	public static final String	CONTENT_TYPE_HTML	= "text/html; charset=utf-8";
-	public static final String	CONTENT_TYPE_XML	= "application/xml";
+	public static final String	CHARSET_UTF8			= "UTF-8";
 
-	public static final String	CONTENT_TYPE_CSS	= "text/css";
-	public static final String	CONTENT_TYPE_JS		= "application/x-javascript";
-	public static final String	CONTENT_TYPE_JSON	= "application/json; charset=UTF-8";
+	public static final String	CONTENT_TYPE_HTML		= "text/html; charset=utf-8";
+	public static final String	CONTENT_TYPE_XML		= "application/xml";
+	public static final String	CONTENT_TYPE_JSON		= "application/json; charset=UTF-8";
 
-	public static final String	CONTENT_TYPE_JPG	= "image/jpeg";
-	public static final String	CONTENT_TYPE_PNG	= "image/png";
-	public static final String	CONTENT_TYPE_GIF	= "image/gif";
-	public static final String	CONTENT_TYPE_WEBP	= "image/webp";
-	public static final String	CONTENT_TYPE_SVG	= "image/svg+xml; charset=UTF-8";
+	public static final String	CONTENT_TYPE_CSS		= "text/css";
+	public static final String	CONTENT_TYPE_JS			= "application/x-javascript";
 
-	public static final String	CONTENT_TYPE_STREAM	= "application/octet-stream";
+	public static final String	CONTENT_TYPE_JPG		= "image/jpeg";
+	public static final String	CONTENT_TYPE_PNG		= "image/png";
+	public static final String	CONTENT_TYPE_GIF		= "image/gif";
+	public static final String	CONTENT_TYPE_WEBP		= "image/webp";
+	public static final String	CONTENT_TYPE_SVG		= "image/svg+xml; charset=UTF-8";
+
+	public static final String	CONTENT_TYPE_STREAM		= "application/octet-stream";
 
 }

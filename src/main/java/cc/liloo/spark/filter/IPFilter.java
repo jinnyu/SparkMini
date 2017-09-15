@@ -79,7 +79,7 @@ public class IPFilter implements Filter {
 			if (extra != null && extra > 0) {
 				JSONArray eArray = obj.getJSONArray("extra");
 				for (Object o : eArray) {
-					if (((String) o).equals(ip) || Static.IP_PUBLIC.equals((String) o)) { return true; }
+					if (((String) o).equals(ip) || Static.IPV4_PUBLIC.equals((String) o)) { return true; }
 				}
 			}
 			// 判断是否在IP范围内
@@ -105,7 +105,7 @@ public class IPFilter implements Filter {
 		}
 		if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
 			ipAddress = request.getRemoteAddr();
-			if (ipAddress.equals("0:0:0:0:0:0:0:1")) ipAddress = "127.0.0.1";
+			if (ipAddress.equals(Static.IPV6_LOCALHOST_LONG)) ipAddress = Static.IPV4_LOCALHOST;
 		}
 		if (ipAddress != null && ipAddress.length() > 15) {
 			if (ipAddress.indexOf(",") > 0) ipAddress = ipAddress.substring(0, ipAddress.indexOf(",")); // 对于通过多个代理的情况，第一个IP为客户端真实IP,多个IP按照','分割
@@ -116,7 +116,7 @@ public class IPFilter implements Filter {
 	public boolean isInRange(String ip, String start, String end) {
 		if (!StrUtil.isAllBlank(ip, start, end) && isIPLegal(ip, start, end)) {
 			// 任意IP
-			if (ip.equals(Static.IP_PUBLIC)) return true;
+			if (ip.equals(Static.IPV4_PUBLIC)) return true;
 			String[] ipStr = ip.split("\\.");
 			String[] startStr = start.split("\\.");
 			String[] endStr = end.split("\\.");
