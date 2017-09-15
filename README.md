@@ -9,8 +9,7 @@
 **This project is a simple wrapper, in order to provide a simple way to start the REST interface.**  
 
 环境要求/Environment :
-> Java8  
-> Maven3.3  
+> Java8 + Maven3.3  
 
 示例/Example :  
 ```
