@@ -5,8 +5,8 @@
 **注意 : 这里的Spark不是用于大数据处理的Spark, 而是一个简单的Web框架, [这里][1]是官方Github地址.**  
 **Notice : This Spark is not used for large data processing Spark, but a simple Web framework, [here][1] is the official Github page.**  
 
-**这个项目是一个简单的封装, 为的是提供一种简单的启动方式, 而不是利用"繁重"的Web容器来提供Rest接口.**  
-**This project is a simple wrapper, in order to provide a simple way to start, rather than the use of "heavy" Web container to provide Rest interface.**  
+**这个项目是一个简单的封装, 为的是提供一种简单的REST接口启动方式.**  
+**This project is a simple wrapper, in order to provide a simple way to start the REST interface.**  
 
 环境要求/Environment :
 > Java8  
