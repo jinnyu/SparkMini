@@ -35,12 +35,17 @@ public class ContentTypeFilter implements Filter {
 
 	private String type;
 
+	/**
+	 * 默认响应类型为JSON, UTF-8编码.
+	 */
 	public ContentTypeFilter() {
 		this.type = Static.CONTENT_TYPE_JSON;
 	}
 	
 	/**
+	 * 指定响应类型
 	 * @param type Http类型
+	 * @see Static
 	 */
 	public ContentTypeFilter(String type) {
 		if (StrUtil.isNotBlank(type)) this.type = type;

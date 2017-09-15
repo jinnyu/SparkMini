@@ -25,6 +25,10 @@ package cc.liloo.spark.router;
  */
 public interface Router {
 
+	/**
+	 * 所有路由的注册均在此方法内完成<br>
+	 * 若有多个路由需要注册, 新建类并实现Router接口即可.
+	 */
 	public void route();
 
 }

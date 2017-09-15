@@ -34,10 +34,18 @@ public class EncodingFilter implements Filter {
 
 	private String encode;
 
+	/**
+	 * 默认编码UTF-8
+	 */
 	public EncodingFilter() {
 		this.encode = Static.CHARSET_UTF8;
 	}
 
+	/**
+	 * 指定编码
+	 * 
+	 * @param encode 编码
+	 */
 	public EncodingFilter(String encode) {
 		if (StrUtil.isNotBlank(encode)) this.encode = encode;
 		else throw new NullPointerException("Encode can not be null!");
