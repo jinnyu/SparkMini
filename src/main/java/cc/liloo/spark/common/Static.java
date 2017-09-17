@@ -22,16 +22,16 @@ import com.xiaoleilu.hutool.log.Log;
 import com.xiaoleilu.hutool.log.LogFactory;
 
 /**
- * <p>Author Written by Kim.</p>
- * <p>Email liloo@liloo.top</p>
- * <p>Date 2017-08-19</p>
+ * Author Written by Kim.<br>
+ * Email liloo@liloo.top<br>
+ * Date 2017-08-19
  */
 public class Static {
 
 	public static final Log		log						= LogFactory.get();
 
 	public static final String	IP_LOCALHOST			= "localhost";
-	
+
 	public static final String	IPV4_LOCALHOST			= "127.0.0.1";
 	public static final String	IPV4_PUBLIC				= "0.0.0.0";
 

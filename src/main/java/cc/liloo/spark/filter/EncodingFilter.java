@@ -26,9 +26,9 @@ import spark.Request;
 import spark.Response;
 
 /**
- * <p>Author Written by Kim.</p>
- * <p>Email liloo@liloo.top</p>
- * <p>Date 2017-08-19</p>
+ * Author Written by Kim.<br>
+ * Email liloo@liloo.top<br>
+ * Date 2017-08-19
  */
 public class EncodingFilter implements Filter {
 
