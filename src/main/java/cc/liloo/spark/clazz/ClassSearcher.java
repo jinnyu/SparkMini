@@ -31,8 +31,8 @@ import cc.liloo.spark.common.Static;
 public class ClassSearcher {
 
 	@SuppressWarnings("unchecked")
-	private static <T> List<Class<? extends T>> extraction(Class<T> clazz, List<String> classFileList) {
-		List<Class<? extends T>> classList = new ArrayList<Class<? extends T>>();
+	private static <T> ArrayList<Class<? extends T>> extraction(Class<T> clazz, List<String> classFileList) {
+		ArrayList<Class<? extends T>> classList = new ArrayList<Class<? extends T>>();
 		for (String classFile : classFileList) {
 			Class<?> classInFile = Reflect.on(classFile).get();
 			if (clazz.isAssignableFrom(classInFile) && clazz != classInFile) { 
@@ -53,12 +53,12 @@ public class ClassSearcher {
 	 * @param baseDirName    查找的文件夹路径
 	 * @param targetFileName 需要查找的文件名
 	 */
-	private static List<String> findFiles(String baseDirName, String targetFileName) {
+	private static ArrayList<String> findFiles(String baseDirName, String targetFileName) {
 		/**
 		 * 算法简述： 从某个给定的需查找的文件夹出发，搜索该文件夹的所有子文件夹及文件，
 		 * 若为文件，则进行匹配，匹配成功则加入结果集，若为子文件夹，则进队列。 队列不空，重复上述操作，队列为空，程序结束，返回结果。
 		 */
-		List<String> classFiles = new ArrayList<String>();
+		ArrayList<String> classFiles = new ArrayList<String>();
 		String tempName = null;
 		// 判断目录是否存在
 		File baseDir = new File(baseDirName);
@@ -166,13 +166,13 @@ public class ClassSearcher {
 		return this;
 	}
 
-	public <T> List<Class<? extends T>> search() {
+	public <T> ArrayList<Class<? extends T>> search() {
 		return search(false);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public <T> List<Class<? extends T>> search(boolean web) {
-		List<String> classFileList = findFiles(classpath, "*.class");
+	public <T> ArrayList<Class<? extends T>> search(boolean web) {
+		ArrayList<String> classFileList = findFiles(classpath, "*.class");
 		if (web) classFileList.addAll(findjarFiles(libDir, includeJars));
 		return extraction(target, classFileList);
 	}

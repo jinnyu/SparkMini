@@ -28,8 +28,10 @@ import com.xiaoleilu.hutool.log.LogFactory;
  */
 public class Static {
 
+	// Log
 	public static final Log		log						= LogFactory.get();
 
+	// IP
 	public static final String	IP_LOCALHOST			= "localhost";
 
 	public static final String	IPV4_LOCALHOST			= "127.0.0.1";
@@ -40,8 +42,10 @@ public class Static {
 	public static final String	IPV6_PUBLIC_SHORT		= "::";
 	public static final String	IPV6_PUBLIC_LONG		= "0:0:0:0:0:0:0:0";
 
+	// Charset
 	public static final String	CHARSET_UTF8			= "UTF-8";
 
+	// Content type
 	public static final String	CONTENT_TYPE_HTML		= "text/html; charset=utf-8";
 	public static final String	CONTENT_TYPE_XML		= "application/xml";
 	public static final String	CONTENT_TYPE_JSON		= "application/json; charset=UTF-8";
