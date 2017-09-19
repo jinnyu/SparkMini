@@ -46,9 +46,9 @@ public class Static {
 	public static final String	CHARSET_UTF8			= "UTF-8";
 
 	// Content type
-	public static final String	CONTENT_TYPE_HTML		= "text/html; charset=utf-8";
+	public static final String	CONTENT_TYPE_HTML		= "text/html";
 	public static final String	CONTENT_TYPE_XML		= "application/xml";
-	public static final String	CONTENT_TYPE_JSON		= "application/json; charset=UTF-8";
+	public static final String	CONTENT_TYPE_JSON		= "application/json";
 
 	public static final String	CONTENT_TYPE_CSS		= "text/css";
 	public static final String	CONTENT_TYPE_JS			= "application/x-javascript";
@@ -57,7 +57,7 @@ public class Static {
 	public static final String	CONTENT_TYPE_PNG		= "image/png";
 	public static final String	CONTENT_TYPE_GIF		= "image/gif";
 	public static final String	CONTENT_TYPE_WEBP		= "image/webp";
-	public static final String	CONTENT_TYPE_SVG		= "image/svg+xml; charset=UTF-8";
+	public static final String	CONTENT_TYPE_SVG		= "image/svg+xml";
 
 	public static final String	CONTENT_TYPE_STREAM		= "application/octet-stream";
 
