@@ -45,7 +45,7 @@ public class CharsetFilter implements Filter {
 	/**
 	 * 指定编码
 	 * 
-	 * @param encode 编码
+	 * @param charset 编码
 	 */
 	public CharsetFilter(String charset) {
 		if (StrUtil.isNotBlank(charset)) this.charset = charset;
