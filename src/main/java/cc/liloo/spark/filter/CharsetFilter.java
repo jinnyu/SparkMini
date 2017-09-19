@@ -28,17 +28,18 @@ import spark.Response;
 /**
  * Author Written by Kim.<br>
  * Email liloo@liloo.top<br>
- * Date 2017-08-19
+ * Date 2017-08-19<br>
+ * Default charset is 'UTF-8'
  */
-public class EncodingFilter implements Filter {
+public class CharsetFilter implements Filter {
 
-	private String encode;
+	private String charset;
 
 	/**
 	 * 默认编码UTF-8
 	 */
-	public EncodingFilter() {
-		this.encode = Static.CHARSET_UTF8;
+	public CharsetFilter() {
+		this.charset = Static.CHARSET_UTF8;
 	}
 
 	/**
@@ -46,15 +47,15 @@ public class EncodingFilter implements Filter {
 	 * 
 	 * @param encode 编码
 	 */
-	public EncodingFilter(String encode) {
-		if (StrUtil.isNotBlank(encode)) this.encode = encode;
-		else throw new NullPointerException("Encode can not be null!");
+	public CharsetFilter(String charset) {
+		if (StrUtil.isNotBlank(charset)) this.charset = charset;
+		else throw new NullPointerException("Charset can not be null!");
 	}
 
 	@Override
 	public void handle(Request request, Response response) throws Exception {
-		if (Static.log.isDebugEnabled()) Static.log.debug("Set charset to {}.", encode);
-		request.raw().setCharacterEncoding(encode);
+		if (Static.log.isDebugEnabled()) Static.log.debug("Set charset to {}.", charset);
+		request.raw().setCharacterEncoding(charset);
 	}
 
 }
