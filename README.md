@@ -14,7 +14,6 @@
 
  - Maven :    
 ```xml
-<!-- https://mvnrepository.com/artifact/cc.liloo/spark-mini -->
 <dependency>
 	<groupId>cc.liloo</groupId>
 	<artifactId>spark-mini</artifactId>
