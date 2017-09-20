@@ -30,6 +30,7 @@ public static void main(String[] args) {
 	List<Class<? extends Router>> list = RouterHandler.getRouters(true);
 	list.stream().forEach(cls -> {
 		// 反射执行
+		// Reflect and invoke
 		try {
 			Router server = cls.newInstance();
 			server.getClass().getMethod("route").invoke(server);
