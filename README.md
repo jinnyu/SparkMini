@@ -9,10 +9,10 @@
 **这个项目是一个简单的封装, 为的是提供一种简单的REST接口启动方式.**  
 **This project is a simple wrapper, in order to provide a simple way to start the REST interface.**
 
-- 环境要求/Environment :
+ - 环境要求/Environment :
 	> Java8 + Maven3.3
 
-- Maven :  
+ - Maven :  
 ```xml
 <!-- https://mvnrepository.com/artifact/cc.liloo/spark-mini -->
 <dependency>
@@ -22,7 +22,7 @@
 </dependency>
 ```
 
-- 示例/Example :  
+ - 示例/Example :  
 ```java
 --------------------------------------------------
 启动类/Start
