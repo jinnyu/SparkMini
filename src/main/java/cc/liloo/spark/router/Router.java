@@ -68,7 +68,7 @@ public interface Router {
 	 * @param uri 注册的URI地址
 	 */
 	default void register(boolean off, String uri) {
-		if (!off) Static.log.debug("Register uri -> {}", uri);
+		if (!off) if (Static.log.isDebugEnabled()) Static.log.debug("Register uri -> {}", uri);
 	}
 	
 }
