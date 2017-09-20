@@ -1,5 +1,5 @@
 # SparkMini
-[![SparkMini](https://img.shields.io/badge/build-passing-green.svg)]() [![License](https://img.shields.io/badge/License-Apache2-blue.svg)]() 
+[![License](https://img.shields.io/badge/JDK-1.8-brightgreen.svg)]() [![SparkMini](https://img.shields.io/badge/build-passing-green.svg)]() [![License](https://img.shields.io/badge/License-Apache2-blue.svg)]() 
 
 ### [Spark][1] - 一个基于 Java 8的小型Web框架 /A tiny web framework for Java 8
 
