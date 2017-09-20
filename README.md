@@ -12,8 +12,8 @@
  - 环境要求/Environment :
 	> Java8 + Maven3.3
 
- - Maven :  
-```xml
+ - Maven :    
+```
 <!-- https://mvnrepository.com/artifact/cc.liloo/spark-mini -->
 <dependency>
 	<groupId>cc.liloo</groupId>
