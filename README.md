@@ -73,12 +73,4 @@ public class IndexRouter implements Router {
 --------------------------------------------------
 ```
 
-**感谢Spark和Hutool给我们带来这么好的开源框架.**  
-**Thanks to Spark and Hutool for bringing us such a good open source framework.**
-
- - Spark  Github https://github.com/perwendel/spark
- - Hutool Github https://github.com/looly/hutool
- - Slf4j Github https://github.com/qos-ch/slf4j
- - Logback Github https://github.com/qos-ch/logback
-
   [1]: https://github.com/perwendel/spark
