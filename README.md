@@ -78,5 +78,7 @@ public class IndexRouter implements Router {
 
  - Spark  Github https://github.com/perwendel/spark
  - Hutool Github https://github.com/looly/hutool
+ - Slf4j Github https://github.com/qos-ch/slf4j
+ - Logback Github https://github.com/qos-ch/logback
 
   [1]: https://github.com/perwendel/spark
