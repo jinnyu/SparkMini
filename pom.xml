@@ -43,7 +43,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<jdk.version>1.8</jdk.version>
 		<spark.version>2.6.0</spark.version>
-		<hutool.version>3.1.0</hutool.version>
+		<hutool.version>3.1.1</hutool.version>
 		<logback.version>1.2.3</logback.version>
 	</properties>
 
