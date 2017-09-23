@@ -4,13 +4,18 @@
 	
 	<!-- 默认输出到控制台, 如需要输出到其他地方请自行添加, 此处不做处理. -->
 	<appender name="R" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 
+		<filter class="cc.liloo.spark.log.LogbackFilter">
+			<name>XXX</name>
+		</filter>
+		 -->
 		<!-- 格式化输出 : %d表示日期, %-5level : 级别从左显示5个字符宽度, %msg : 日志消息, %n是换行符 -->
 		<encoder>
 			<!-- 2017-09-01 09:00:00 [INFO ] (Test.java:60) - This is a test Logger Message. -->
-			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] \(%F:%L\) - %msg%n</pattern>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] \(%F:%L\) - %msg%n</pattern>
 		</encoder>
 	</appender>
-
+	
 	<!-- 日志输出级别 -->
 	<root level="INFO">
 		<appender-ref ref="R" />
