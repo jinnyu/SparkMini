@@ -1,7 +1,7 @@
 /**
 Apache License V2.0
 --------------------------------------------------
-Copyright [2017] [Liloo liloo@liloo.top]
+Copyright (c) 2017-2017 Liloo (liloo@liloo.top)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -64,11 +64,11 @@ public class LogbackFilter extends Filter<ILoggingEvent> {
 					Static.log.warn("No method for invoke, set method for invoke");
 				}
 			} catch (IllegalAccessException e) {
-				e.printStackTrace();
+				throw new RuntimeException(e);
 			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
+				throw e;
 			} catch (InvocationTargetException e) {
-				e.printStackTrace();
+				throw new RuntimeException(e);
 			}
 		}
 		return FilterReply.NEUTRAL;

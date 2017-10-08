@@ -1,7 +1,7 @@
 /**
 Apache License V2.0
 --------------------------------------------------
-Copyright [2017] [Liloo liloo@liloo.top]
+Copyright (c) 2017-2017 Liloo (liloo@liloo.top)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -40,12 +40,12 @@ public interface Router {
 	void route();
 
 	/**
-	 * <pre><code>
+	 * <pre>
 	 * 使用示例
 	 * Map&lt;String, Object&gt; json = json(200, "success");
-	 * json.put("some other information", ...);
+	 * json.put("some information", ...);
 	 * return JSONUtil.toJsonStr(json);
-	 * </code></pre>
+	 * </pre>
 	 * @param status   json返回状态码
 	 * @param response 响应
 	 * @return 标准json格式数据<br>{ "status" : int, "response" : object, "time" : "Server time/yyyy-MM-dd HH:mm:ss:SSS", etc... }
