@@ -66,7 +66,7 @@ public class LogbackFilter extends Filter<ILoggingEvent> {
 			} catch (IllegalAccessException e) {
 				throw new RuntimeException(e);
 			} catch (IllegalArgumentException e) {
-				throw e;
+				throw new RuntimeException(e);
 			} catch (InvocationTargetException e) {
 				throw new RuntimeException(e);
 			}
