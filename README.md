@@ -60,7 +60,7 @@ public class IndexRouter implements Router {
 		// 这里的Spark是Spark框架提供的, 相关文档请参考Sprak官网. http://sparkjava.com/documentation
 		// Spark is provided by the Spark framework. Please refer to the Sprak website for documentation. Http://sparkjava.com/documentation
 		Spark.get("/", (request, response) -> {
-   			return "Hello, this is index!";
+   			return "Hello, this is /!";
    		});
    		Spark.path("/api", () -> {
    			Spark.get("/account", IndexController::account);
