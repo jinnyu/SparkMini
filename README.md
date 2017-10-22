@@ -26,12 +26,12 @@
 --------------------------------------------------
 启动类/Start
 public static void main(String[] args) {
-	List<Class<? extends Router>> list = RouterHandler.getRouters(true);
+	Set<Class<?>> list = RouterHandler.getRouters("package name here");
 	list.stream().forEach(cls -> {
 		// 反射执行
 		// Reflect and invoke
 		try {
-			Router server = cls.newInstance();
+			Router server = (Router) cls.newInstance();
 			server.getClass().getMethod("route").invoke(server);
 		} catch (InstantiationException e) {
 			// ignore
@@ -63,11 +63,11 @@ public class IndexRouter implements Router {
    			return "Hello, this is index!";
    		});
    		Spark.path("/api", () -> {
-   			Spark.get("/account", IndexController::api);
+   			Spark.get("/account", IndexController::account);
    		});
    	}
-   	private static String api(Request requset, Response response) {
-   		return "Hello, this is api.";
+   	private static String account(Request requset, Response response) {
+   		return "Hello, this is /api/account.";
    	}
 }
 --------------------------------------------------

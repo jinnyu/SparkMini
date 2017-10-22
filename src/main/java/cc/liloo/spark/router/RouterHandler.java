@@ -18,9 +18,10 @@ limitations under the License.
  */
 package cc.liloo.spark.router;
 
-import java.util.List;
+import java.util.Set;
 
-import cc.liloo.spark.clazz.ClassSearcher;
+import com.xiaoleilu.hutool.util.ClassUtil;
+
 import cc.liloo.spark.common.Static;
 
 /**
@@ -31,13 +32,21 @@ import cc.liloo.spark.common.Static;
 public class RouterHandler {
 
 	/**
-	 * 扫描所有子类
+	 * 扫描所有子类<br>
+	 * 因为用的是通用类扫描工具, 所以泛型为 ? , 在内部已判断是否是 Router 的子类.
 	 * 
-	 * @param scanJar 是否扫描jar包中的类
-	 * @return Router子类集合
+	 * @param packages 包名
+	 * @return 返回所有子类集合
 	 */
-	public static List<Class<? extends Router>> getRouters(boolean scanJar) {
-		List<Class<? extends Router>> classes = ClassSearcher.of(Router.class).includeAllJarsInLib(scanJar).search();
+	public static Set<Class<?>> getRouters(String packages) {
+		Set<Class<?>> classes = ClassUtil.scanPackage(packages, (cls) -> {
+			final String name = Router.class.getName();
+			Class<?>[] c = (Class<?>[]) cls.getInterfaces();
+			for (Class<?> _interface : c) {
+				if (_interface.getName().equals(name)) return true;
+			}
+			return false;
+		});
 		if (Static.log.isDebugEnabled()) {
 			classes.stream().forEach(cls -> {
 				Static.log.debug("Bind Route Class -> {}", cls.getName());

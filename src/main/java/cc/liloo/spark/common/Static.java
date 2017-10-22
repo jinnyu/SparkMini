@@ -45,6 +45,17 @@ public class Static {
 	// Charset
 	public static final String	CHARSET_UTF8			= "UTF-8";
 
+	// Http method
+	public static final String	HTTP_METHOD_GET			= "GET";
+	public static final String	HTTP_METHOD_HEAD		= "HEAD";
+	public static final String	HTTP_METHOD_PUT			= "PUT";
+	public static final String	HTTP_METHOD_POST		= "POST";
+	public static final String	HTTP_METHOD_PATCH		= "PATCH";
+	public static final String	HTTP_METHOD_DELETE		= "DELETE";
+	public static final String	HTTP_METHOD_TRACE		= "TRACE";
+	public static final String	HTTP_METHOD_OPTIONS		= "OPTIONS";
+	public static final String	HTTP_METHOD_CONNECT		= "CONNECT";
+
 	// Content type
 	public static final String	CONTENT_TYPE_HTML		= "text/html";
 	public static final String	CONTENT_TYPE_XML		= "application/xml";
