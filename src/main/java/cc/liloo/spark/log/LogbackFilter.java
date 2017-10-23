@@ -75,7 +75,7 @@ public class LogbackFilter extends Filter<ILoggingEvent> {
 	}
 
 	public static void setMethod(Method method) {
-		if (ObjectUtil.isNotNull(method)) {
+		if (ObjectUtil.isNotNull(method) && !inject) {
 			LogbackFilter.method = method;
 			inject = true;
 		} else {
