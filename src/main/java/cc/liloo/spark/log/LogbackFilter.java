@@ -20,8 +20,8 @@ package cc.liloo.spark.log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Objects;
 
-import com.xiaoleilu.hutool.util.ObjectUtil;
 import com.xiaoleilu.hutool.util.StrUtil;
 
 import cc.liloo.spark.common.Static;
@@ -48,17 +48,22 @@ import ch.qos.logback.core.spi.FilterReply;
  */
 public class LogbackFilter extends Filter<ILoggingEvent> {
 
-	private static boolean	inject;
+	/** 方法是否注入 */
+	private static boolean	method_inject;
+	/** 参数是否注入 */
+	private static boolean	args_inject;
+	/** 被注入的方法 */
 	private static Method	method;
-	private static Object[]	args	= new Object[0];
+	/** 被注入的参数 */
+	private static Object[]	args	= null;
 
 	@Override
 	public FilterReply decide(ILoggingEvent event) {
 		String thread = event.getThreadName();
 		if (StrUtil.isNotBlank(thread) && thread.equalsIgnoreCase(getName())) {
 			try {
-				if (inject) {
-					if (args.length == 0) method.invoke(method);
+				if (method_inject) {
+					if (!args_inject) method.invoke(method);
 					else method.invoke(method, args);
 				} else {
 					Static.log.warn("No method for invoke, set method for invoke");
@@ -75,16 +80,22 @@ public class LogbackFilter extends Filter<ILoggingEvent> {
 	}
 
 	public static void setMethod(Method method) {
-		if (ObjectUtil.isNotNull(method) && !inject) {
+		if (!Objects.isNull(method) && !method_inject) {
 			LogbackFilter.method = method;
-			inject = true;
+			method_inject = true;
 		} else {
 			throw new NullPointerException("Method can not be null!");
 		}
 	}
 
 	public static void setArgs(Object[] args) {
-		LogbackFilter.args = args;
+		if (!args_inject) {
+			for (Object o : args) {
+				if (Objects.isNull(o)) throw new NullPointerException("Arg can not be null!");
+			}
+			LogbackFilter.args = args;
+			args_inject = true;
+		}
 	}
 
 }
